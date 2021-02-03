@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: Launchpad HA Control
+
+logging:
+  level:
+    root: info
+    fr.tas: debug
+
+ha:
+  url: "http://homeassistant.local/"
+  token: "-- TOKEN --"
+
+launchpad:
+  pads:
+    - name: "Chambre 1 / Lumiere 1"
+      x: 0
+      y: 0
+      domain: light
+      service: toggle
+      entityId: "light.garage_light"
+
+  buttons:
+    - name: "Chambre 1"
+      isTopRow: true
+      number: 0
+      domain: light
+      service: toggle
+      entityId: "light.garage_light"
