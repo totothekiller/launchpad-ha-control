@@ -20,14 +20,12 @@ import com.fasterxml.jackson.databind.JsonNode;
 import io.ha.launchpad.config.properties.HomeAssistantProperties;
 import io.ha.launchpad.domain.ServiceCallRequest;
 import io.ha.launchpad.domain.StateResult;
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * REST API to Home Assistant
  * 
  * @author pfeifft
  */
-@Slf4j
 @Service
 public class HomeAssistantRestApi {
 

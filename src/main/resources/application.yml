@@ -1,11 +1,15 @@
 spring:
   application:
     name: Launchpad HA Control
+  profiles:
+    active:
+       - launchpad
+       - connect
 
 logging:
   level:
     root: info
-    fr.tas: debug
+    io.ha.launchpad: debug
 
 ha:
   url: "http://homeassistant.local/"
