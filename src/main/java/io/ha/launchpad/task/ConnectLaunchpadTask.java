@@ -1,5 +1,7 @@
 package io.ha.launchpad.task;
 
+import static java.lang.Long.MAX_VALUE;
+import static java.util.concurrent.TimeUnit.DAYS;
 import static net.thecodersbreakfast.lp4j.api.BackBufferOperation.NONE;
 import static net.thecodersbreakfast.lp4j.api.Color.GREEN;
 import static net.thecodersbreakfast.lp4j.api.ScrollSpeed.SPEED_MIN;
@@ -60,8 +62,14 @@ public class ConnectLaunchpadTask implements ApplicationRunner {
 		
 		// Configure Handlers
 		for (PadProperties padProperties : launchpadProperties.getPads()) {
+			
+			// LP -> HA
 			PadHandler handler = new HACallServicePad(padProperties, homeAssistantRestApi);
 			eventDispatcherService.addPadHandler(handler);
+			
+			// HA -> LP
+			HAStateToLaunchpad haStateToLaunchpad = new HAStateToLaunchpad(padProperties, launchpadProperties, homeAssistantRestApi, launchpadClient);
+			scheduledExecutorService.scheduleWithFixedDelay(haStateToLaunchpad, 0, 1, TimeUnit.SECONDS);
 		}
 		
 		// Configure Lauchpad
@@ -69,16 +77,18 @@ public class ConnectLaunchpadTask implements ApplicationRunner {
 		
 		log.info("System is ready! Type any char to close the program.");
 		
-		for (PadProperties padProperties : launchpadProperties.getPads()) {
-			HAStateToLaunchpad haStateToLaunchpad = new HAStateToLaunchpad(padProperties, launchpadProperties, homeAssistantRestApi, launchpadClient);
-			scheduledExecutorService.scheduleWithFixedDelay(haStateToLaunchpad, 0, 1, TimeUnit.SECONDS);
+		// Infinite wait
+		try {
+			scheduledExecutorService.awaitTermination(MAX_VALUE, DAYS);
+		} catch(InterruptedException e)
+		{
+			log.debug("End wait !!", e);
 		}
 		
-		// Type any char to close the program
-		System.in.read();
-
+		// Shutdown
 		scheduledExecutorService.shutdown();
 		launchpad.close();
+		
 		log.info("Bye, Bye!");
 	}
 
