@@ -7,6 +7,8 @@ spring:
        - connect
 
 logging:
+  file:
+    name: "logs/lp4ha.log"
   level:
     root: info
     io.ha.launchpad: debug
