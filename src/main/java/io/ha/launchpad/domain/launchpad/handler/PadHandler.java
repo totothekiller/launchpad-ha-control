@@ -1,4 +1,4 @@
-package io.ha.launchpad.domain.handler;
+package io.ha.launchpad.domain.launchpad.handler;
 
 import net.thecodersbreakfast.lp4j.api.Pad;
 

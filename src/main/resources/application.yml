@@ -3,8 +3,13 @@ spring:
     name: Launchpad HA Control
   profiles:
     active:
-       - launchpad
-       - connect
+#       - launchpad
+#       - connect
+  main:
+    web-application-type: none
+    
+  jackson:
+    default-property-inclusion: non-null
 
 logging:
   file:
@@ -14,7 +19,8 @@ logging:
     io.ha.launchpad: debug
 
 ha:
-  url: "http://homeassistant.local/"
+  url: "http://homeassistant.local:8123/"
+  websocket: "ws://homeassistant.local:8123/api/websocket"
   token: "-- TOKEN --"
 
 launchpad:

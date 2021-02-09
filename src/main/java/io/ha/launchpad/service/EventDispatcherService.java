@@ -5,7 +5,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import io.ha.launchpad.domain.handler.PadHandler;
+import io.ha.launchpad.domain.launchpad.handler.PadHandler;
 import lombok.extern.slf4j.Slf4j;
 import net.thecodersbreakfast.lp4j.api.Button;
 import net.thecodersbreakfast.lp4j.api.LaunchpadListener;

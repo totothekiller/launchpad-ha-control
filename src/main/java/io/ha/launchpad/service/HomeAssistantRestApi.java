@@ -18,8 +18,8 @@ import org.springframework.web.util.UriComponentsBuilder;
 import com.fasterxml.jackson.databind.JsonNode;
 
 import io.ha.launchpad.config.properties.HomeAssistantProperties;
-import io.ha.launchpad.domain.ServiceCallRequest;
-import io.ha.launchpad.domain.StateResult;
+import io.ha.launchpad.domain.ha.rest.ServiceCallRequest;
+import io.ha.launchpad.domain.ha.rest.StateResult;
 
 /**
  * REST API to Home Assistant

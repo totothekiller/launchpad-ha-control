@@ -13,4 +13,6 @@ public class HomeAssistantProperties {
 	private String url;
 	
 	private String token;
+	
+	private String websocket;
 }

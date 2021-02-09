@@ -1,4 +1,4 @@
-package io.ha.launchpad.domain;
+package io.ha.launchpad.domain.ha.rest;
 
 import java.time.OffsetDateTime;
 import java.util.Map;
@@ -13,13 +13,13 @@ public class StateResult {
 	@JsonProperty("entity_id")
 	private String entityId;
 	
+	private String state;
+	
 	@JsonProperty("last_changed")
 	private OffsetDateTime lastChanged;
 	
 	@JsonProperty("last_updated")
 	private OffsetDateTime lastUpdated;
 	
-	private String state;
-	
-	private Map<String, String> attributes;
+	private Map<String, Object> attributes;
 }

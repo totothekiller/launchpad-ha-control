@@ -1,4 +1,4 @@
-package io.ha.launchpad.domain;
+package io.ha.launchpad.domain.ha.rest;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

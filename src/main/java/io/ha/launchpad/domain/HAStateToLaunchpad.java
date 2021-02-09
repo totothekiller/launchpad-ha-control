@@ -4,6 +4,7 @@ import org.springframework.http.ResponseEntity;
 
 import io.ha.launchpad.config.properties.LaunchpadProperties;
 import io.ha.launchpad.config.properties.PadProperties;
+import io.ha.launchpad.domain.ha.rest.StateResult;
 import io.ha.launchpad.service.HomeAssistantRestApi;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;

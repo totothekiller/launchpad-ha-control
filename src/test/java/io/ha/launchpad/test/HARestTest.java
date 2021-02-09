@@ -11,8 +11,8 @@ import org.springframework.test.context.ActiveProfiles;
 
 import com.fasterxml.jackson.databind.JsonNode;
 
-import io.ha.launchpad.domain.ServiceCallRequest;
-import io.ha.launchpad.domain.StateResult;
+import io.ha.launchpad.domain.ha.rest.ServiceCallRequest;
+import io.ha.launchpad.domain.ha.rest.StateResult;
 import io.ha.launchpad.service.HomeAssistantRestApi;
 import lombok.extern.slf4j.Slf4j;
 

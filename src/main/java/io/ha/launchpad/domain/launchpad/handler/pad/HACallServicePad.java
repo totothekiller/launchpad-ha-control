@@ -1,8 +1,8 @@
-package io.ha.launchpad.domain.handler.pad;
+package io.ha.launchpad.domain.launchpad.handler.pad;
 
 import io.ha.launchpad.config.properties.PadProperties;
-import io.ha.launchpad.domain.ServiceCallRequest;
-import io.ha.launchpad.domain.handler.PadHandler;
+import io.ha.launchpad.domain.ha.rest.ServiceCallRequest;
+import io.ha.launchpad.domain.launchpad.handler.PadHandler;
 import io.ha.launchpad.service.HomeAssistantRestApi;
 import lombok.Data;
 import lombok.ToString;
